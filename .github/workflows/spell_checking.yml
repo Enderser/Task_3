@@ -1,0 +1,19 @@
+name: Spell Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install codespell
+        run: pip install codespell
+
+      - name: Run codespell
+        run: |
+          codespell --ignore-words-list="crate,fo" --skip="*.min.js,*.lock,*.svg,*.png,*.jpg" .
