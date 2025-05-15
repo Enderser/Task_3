@@ -16,4 +16,4 @@ jobs:
 
       - name: Run codespell
         run: |
-          codespell --ignore-words-list="crate,fo" --skip="*.min.js,*.lock,*.svg,*.png,*.jpg" .
+          codespell --write-changes --ignore-words-list="crate,fo" --skip="*.min.js,*.lock,*.svg,*.png,*.jpg" .
